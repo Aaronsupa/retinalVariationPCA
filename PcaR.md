@@ -13,6 +13,8 @@ names(metadata)[names(metadata) == 'Sample.Name'] <- 'sample_id'
 metadata
 head(counts)
 ```
+![Screenshot 2024-05-21 104350](https://github.com/Aaronsupa/retinalVariationPCA/assets/77075455/30ab356b-48f2-4916-a2ac-8c6bdf8f31ea)
+![Screenshot 2024-05-21 104355](https://github.com/Aaronsupa/retinalVariationPCA/assets/77075455/4178befd-e74a-4ab8-ac63-a8995dc53aeb)
 
 ### Individual Data
 ```{r}
@@ -34,6 +36,8 @@ individualData <- select(individualData, !Age)
 individualData <- individualData %>% mutate(Ages = c(editAge))
 individualData
 ```
+![Screenshot 2024-05-21 104407](https://github.com/Aaronsupa/retinalVariationPCA/assets/77075455/24aa14a4-3cdc-4148-a83f-23c0241f58cd)
+
 ### TPM Function
 ```{r}
 TPM <- function(counts) {
@@ -46,6 +50,8 @@ tpms <-counts
 head(tpms)
 head(colnames(tpms))
 ```
+![Screenshot 2024-05-21 104545](https://github.com/Aaronsupa/retinalVariationPCA/assets/77075455/02dc78a5-32b6-48c4-90be-2210efad6677)
+![Screenshot 2024-05-21 104538](https://github.com/Aaronsupa/retinalVariationPCA/assets/77075455/7a97ad79-b1cc-4227-8a4d-518ea8faf78c)
 
 ### Apply TPM function
 ```{r}
@@ -54,6 +60,8 @@ for(i in 1:ncol(tpms)){
 }
 head(tpms)
 ```
+![Screenshot 2024-05-21 104553](https://github.com/Aaronsupa/retinalVariationPCA/assets/77075455/79dc880d-f42d-4ae2-be4f-0a12d9d6b8bc)
+
 ### Log Change
 ```{r}
 log_tpms<- log(tpms) 
@@ -69,6 +77,7 @@ var_explained <- data.frame(PC = paste0("PC", 1:ncol(PC_x$x)), var_explained=(PC
 PC1to9_Var <- var_explained[1:9,]
 PC1to9_Var
 ```
+![Screenshot 2024-05-21 104706](https://github.com/Aaronsupa/retinalVariationPCA/assets/77075455/5b0c2620-df8d-4674-be38-48d4feb90b9d)
 
 ### Scree Plot Displaying PCAs
 ```{r}
