@@ -99,6 +99,7 @@ ggplot(PC1to9_Var, aes(x=PC,y=var_explained*100, group=1))+
   theme(plot.title = element_text(hjust = 0.1)) +
   NULL
 ```
+![Screenshot 2024-04-18 133640](https://github.com/Aaronsupa/retinalVariationPCA/assets/77075455/de947deb-385b-4859-becd-9a8032c0493a)
 ### PCA scatterplot
 ```{r}
 
@@ -113,6 +114,7 @@ ggplot(data = PCs_x, aes(x =PC1, y=PC2, label = sample_id)) +
   NULL
 
 ```
+![Screenshot 2024-05-21 123809](https://github.com/Aaronsupa/retinalVariationPCA/assets/77075455/ecfa1c2c-53db-4ede-b27b-d67498ade33c)
 
 ### Redo PCA with outlier removed
 ```{r}
@@ -131,6 +133,7 @@ var_explained <- data.frame(PC= paste0("PC",1:ncol(PC_x$x)),
 PC1to9_Var<-var_explained[1:9,] 
 PC1to9_Var
 ```
+![Screenshot 2024-04-18 141324](https://github.com/Aaronsupa/retinalVariationPCA/assets/77075455/b61bb413-fd83-4468-acce-b297ac155911)
 
 ### New Scree Plot
 ```{r}
@@ -144,6 +147,8 @@ ggplot(PC1to9_Var, aes(x=PC,y=var_explained*100, group=1))+
   NULL
 
 ```
+![Screenshot 2024-04-18 141228](https://github.com/Aaronsupa/retinalVariationPCA/assets/77075455/bbadae77-fc61-4e7b-9f0f-e5e92f219a1b)
+
 ### ScatterPlots showing different sources of variation
 ```{r}
 
@@ -178,4 +183,8 @@ ggplot(data = PCs_x, aes(x =PC1, y=PC3, color = Day)) +
   theme(plot.title = element_text(hjust = 0.1)) +
   NULL
 ```
+![Screenshot 2024-05-21 123914](https://github.com/Aaronsupa/retinalVariationPCA/assets/77075455/6c1e7dc2-271c-43b2-9fb7-945d90b63217)
+![Screenshot 2024-05-21 123926](https://github.com/Aaronsupa/retinalVariationPCA/assets/77075455/ba051c92-f17d-4724-b9d2-4cba4738b8aa)
+![Screenshot 2024-05-21 123920](https://github.com/Aaronsupa/retinalVariationPCA/assets/77075455/c611c7f5-621e-4ca9-bcb2-4246fd01ce11)
+
 
